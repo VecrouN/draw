@@ -12,7 +12,7 @@ fps = 60  # переменная колличесвта кадров в секу
 WHITE = (255, 255, 255)   # переменная черного цвета (rgb котртеж)
 BLACK = (0, 0, 0)  # переменная белого цвета (rgb котртеж)
 input_screen.fill(WHITE)  # заливаем поверхность для рисования белым
-display.set_caption('Ввод')
+display.set_caption('Ввод')  # переименование окна
 running = True  # переменная для выхода из цикла
 while running:
     for event in pygame.event.get():
@@ -32,16 +32,15 @@ while running:
     pygame.display.flip()  # обновление поверхности
     clock.tick(fps)  # ограничение fps
 
-pygame.quit()
-result_screen = pygame.display.set_mode((edge, edge))
-display.set_caption('Вывод')
-result_screen.fill(WHITE)
-surfarray.blit_array(result_screen, result_array)
+pygame.quit()  # выход
+result_screen = pygame.display.set_mode((edge, edge))  # создание окна
+display.set_caption('Вывод')  # переименование
+surfarray.blit_array(result_screen, result_array)  # отрисовка содержимого массива
+pygame.display.flip()
 running = True
 while running:
     for event in pygame.event.get():
-
         if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE):
             running = False
     pygame.display.flip()
-    clock.tick(fps)
+    clock.tick(fps/5)
