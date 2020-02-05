@@ -1,13 +1,12 @@
 import draw_window
 import numpy
 
-print(1)
-width = 10
-height = 5
-rand = 2
+
+width = 256
+height = 256
+rand = 10
 array = numpy.zeros((width, height, 3))
 array = draw_window.draw_win(width, height, rand)
-print(2)
 print(array)
 print('*******')
 for i in range(width):

@@ -50,6 +50,7 @@ def draw_win(width, height, rand):
     clock.tick(fps / 5)
     return result_array
 
+
 if __name__ == '__main__':
     width_ = 10
     height_ = 5
