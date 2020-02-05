@@ -1,14 +1,12 @@
 import pygame
 import pygame.surfarray as surfarray
 import pygame.display as display
-import numpy
 
 
-def draw_win(edge):
-    rand = 10
+def draw_win(width, height, rand):
     pygame.init()
     # радиус рисования
-    input_screen = pygame.display.set_mode((edge, edge))  # создание поверхности для рисования
+    input_screen = pygame.display.set_mode((width, height))  # создание поверхности для рисования
     clock = pygame.time.Clock()  # создание объекта clock класса Clock для ограничения колличесвта кадров в секундк (
     # FPS)
     fps = 60  # переменная колличесвта кадров в секундк
@@ -37,7 +35,7 @@ def draw_win(edge):
         clock.tick(fps)  # ограничение fps
 
     pygame.quit()  # выход
-    result_screen = pygame.display.set_mode((edge, edge))  # создание окна
+    result_screen = pygame.display.set_mode((width, height))  # создание окна
     display.set_caption('Вывод')  # переименование
     surfarray.blit_array(result_screen, result_array)  # отрисовка содержимого массива
     pygame.display.flip()
@@ -53,6 +51,7 @@ def draw_win(edge):
     return result_array
 
 if __name__ == '__main__':
-    edge_ = 256  # разрешение в пикселях (edge х edge)
-    draw_win(edge_)
-
+    width_ = 10
+    height_ = 5
+    rand_ = 1
+    print(draw_win(width_, height_, rand_))
