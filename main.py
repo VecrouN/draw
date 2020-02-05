@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import pygame
 import pygame.surfarray as surfarray
 import pygame.display as display
@@ -44,3 +45,9 @@ while running:
             running = False
     pygame.display.flip()
     clock.tick(fps/5)
+=======
+import draw_window
+print(1)
+print(draw_window.draw_win(256))
+print(2)
+>>>>>>> Stashed changes
